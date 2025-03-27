@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dado um array de números, crie uma função que retorne um novo array contendo apenas os números pares</title>
+</head>
+<body>
+    <label for="num">Digite números: </label>
+    <input type="text" id="num" placeholder="Ex: 10,20,30,40,50">
+    <button onclick="numPares()">Verificar</button>
+    <p id="resultado"></p>
+
+    <script>
+        const numPares = () => {
+            const input = document.getElementById("num").value;
+            const num = input.split(',').map(num => parseFloat(num.trim())); //String para Array
+
+            const pares = num.filter(num => num % 2 === 0); //Filtra os números pares
+            
+            if (pares.length > 0) {
+                document.getElementById("resultado").innerHTML = "Números pares: " + pares.join(','); //Juntar os elementos do Array em uma ÚNICA String (.join)
+            } else {
+                document.getElementById("resultado").innerHTML = "Não há números pares.";
+            }           
+        }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=
+    , initial-scale=1.0">
+    <title>Função para inverter uma string</title>
+</head>
+<body>
+    <label for="num1">Insira um número: </label>
+    <input type="number" id="num1">
+    <button type="button"onclick="inverterNumero()">Verificar</button><br>
+    <p id="resultadoNumero"></p>
+
+    <label for="texto">Insira uma palavra: </label>
+    <input type="text" id="texto">
+    <button type="button"onclick="inverterTexto()">Verificar</button>
+    <p id="resultadoTexto"></p>
+
+    <script>
+        function inverterString(str){
+            return str.split('').reverse().join('');
+        }
+        function inverterNumero(){
+            let num1= document.getElementById("num1").value;
+            let resultadoNumero= inverterString(String(num1));
+            document.getElementById("resultadoNumero").innerText="Número invertido: "+resultadoNumero;
+
+        }
+        function inverterTexto(str){
+            let texto= document.getElementById("texto").value;
+            let resultadoTetxo= inverterString(texto);
+            document.getElementById("resultadoTexto").innerText="Texto invertido: "+resultadoTetxo;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Números pares de 1 a 10</title>
+</head>
+<body>
+    <h1>Números pares</h1>
+    <div id="resultado"></div>
+
+    <script>
+        let resultadoDiv= document.getElementById("resultado");
+        let numerosPares= "";
+        
+        let contador=1;
+        while (contador<=10){
+            if(contador%2==0){
+                numerosPares += contador + "<br>"; // Adiciona o número par à string
+            }
+            contador++; //Incrementa o contaor
+        }
+        resultadoDiv.innerHTML= numerosPares;
+
+    </script>
+</body>
+</html>

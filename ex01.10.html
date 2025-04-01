@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For in</title>
+</head>
+<body>
+    <table id="tableDados">
+        <thead>
+            <tr>
+                <th>chave</th>
+                <th>valor</th>
+            </tr>
+        </thead>
+    </table>
+    <tbody></tbody>
+    <script>
+        const produto={
+            nome: 'LetTop',
+            preço: 12200,
+            marca: 'Dell',
+            emEstoque: true
+        };
+
+        const tabelaDados=document.getElementById('tabelaDados').getElementsByTagName('tbody')[0]; //Pegou a tabela e jogou em "tabelaDados"
+
+        for (const chave in produto){
+            const novaLinha=tabelaDados.insertRow();
+            const celulaChave=novaLinha.insertCell();
+            const celulaValor=novaLinha.insertCell();
+
+            celulaChave.textContent=chave;
+            celulaValor.textContent=produto[chave];
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crie uma função que receba um array de objetos (cada objeto com as propriedades "nome" e "idade") e retorne um novo array com os nomes das pessoas com idade superior a 18 anos.</title>
+</head> 
+<body>
+
+    <h1>Digite o nome e idade (separados por vírgula):</h1>
+    <input type="text" id="pessoa" placeholder="Ex: Júlia,21, Maria,30, Ana,25">
+    <button type="button" onclick="filtrarPessoas()">Enviar</button>
+
+    <p id="resultado"></p>
+
+    <script>
+        function filtrarPessoas() {
+            let input = document.getElementById("pessoa").value;
+            let pessoasArray = input.split(","); //separar letra e número
+            let pessoas = [];
+
+            for (let i = 0; i < pessoasArray.length; i += 2) {
+                pessoas.push({
+                    nome: pessoasArray[i],
+                    idade: parseInt(pessoasArray[i + 1])
+                });
+            }
+
+            const maioresDe18 = pessoas.filter(pessoa => pessoa.idade > 18).map(pessoa => pessoa.nome); // filtar maiores de 18
+
+            document.getElementById("resultado").innerText = `Pessoas com mais de 18 anos: [${maioresDe18.join(", ")}]`;
+        }
+    </script>
+
+</body>
+</html>

@@ -15,11 +15,17 @@
         const numPares = () => {
             const input = document.getElementById("num").value;
             const num = input.split(',').map(num => parseFloat(num.trim())); //String para Array
+                //map= é usado para fazer uma nova array
+                //split(','): Divide a string com base nas vírgulas (ou seja, separa os números). 
+                //Por exemplo, se o valor do input for "1, 2, 3, 4", ele vai gerar um array ["1", " 2", " 3", " 4"]
+
+                //Usar trim() para remover espaços extras no começo e no fim de cada número (caso existam)
 
             const pares = num.filter(num => num % 2 === 0); //Filtra os números pares
             
             if (pares.length > 0) {
                 document.getElementById("resultado").innerHTML = "Números pares: " + pares.join(','); //Juntar os elementos do Array em uma ÚNICA String (.join)
+                                                                                                        //é o que aparece no resultado
             } else {
                 document.getElementById("resultado").innerHTML = "Não há números pares.";
             }           

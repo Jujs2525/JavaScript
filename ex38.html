@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Número ao quadrado</title>
+</head>
+<body>
+    
+    <h1>Número ao quadrado</h1>
+    
+    <label for="num">Digite um número: (separadas por vírgulas): </label>
+    <input type="text" id="num" placeholder="10, 20, 30">
+    
+    <button onclick="numeroAoQuadrado()">Calcular número</button>
+    
+    <p id="resultado"></p>
+
+    <script>
+        // Função que recebe um array de strings e retorna um novo array com o comprimento de cada string
+        const calcularNumero = (arrayDeNumeros) => {
+            return arrayDeNumeros.map(num => num*num); // Conta as letras de cada palavra
+        };
+
+        // Função para pegar as palavras, contar as letras e mostrar o resultado
+        const numeroAoQuadrado = () => {
+            const input = document.getElementById("num").value;  // Pega o que você escreveu
+            const arrayDeNumeros = input.split(",").map(num => parseFloat(num.trim())).filter(num=> !isNaN(num));  // Separa as palavras e tira espaços extras
+
+            // Exibe o resultado na tela
+            document.getElementById("resultado").innerHTML = `Número ao quadrado: ${calcularNumero(arrayDeNumeros).join(", ")}`; //Juntar os elementos do Array em uma ÚNICA String (.join)
+        };
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calcular Comprimentos de Strings</title>
+</head>
+<body>
+    
+    <h1>Calculadora de Comprimento de Strings</h1>
+    
+    <label for="strings">Digite um array de strings (separadas por vírgulas): </label>
+    <input type="text" id="strings" placeholder="Ex: morango, uva, laranja">
+    
+    <button onclick="mostrarComprimentos()">Calcular Comprimentos</button>
+    
+    <p id="resultado"></p>
+
+    <script>
+        // Função que recebe um array de strings e retorna um novo array com o comprimento de cada string
+        const calcularComprimentos = (arrayDeStrings) => {
+            return arrayDeStrings.map(str => str.length); // Conta as letras de cada palavra
+        };
+
+        // Função para pegar as palavras, contar as letras e mostrar o resultado
+        const mostrarComprimentos = () => {
+            const input = document.getElementById("strings").value;  // Pega o que você escreveu
+            const arrayDeStrings = input.split(",").map(str => str.trim());  // Separa as palavras e tira espaços extras
+
+            // Exibe o resultado na tela
+            document.getElementById("resultado").innerHTML = `Comprimentos das strings: ${calcularComprimentos(arrayDeStrings).join(", ")}`; //Juntar os elementos do Array em uma ÚNICA String (.join)
+        };
+    </script>
+    
+</body>
+</html>

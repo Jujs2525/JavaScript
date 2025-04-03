@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funçao com array</title>
+</head>
+<body>
+    <label for="num">Insira os números: </label>
+    <input type="text" id="num" placeholder="Ex: 10, 20, 30, 40, 50">
+    <button onclick="verificar()">Verificar</button>
+    <p id="resultado"></p>
+
+    <script>
+        const verificar= () =>{
+            const input= document.getElementById("num").value;
+            const num= input.split(',').map(num=>parseFloat(num.trim()))
+
+            const pares= num.filter(num=> num%2===0);
+
+            if (pares.length>0){
+                const soma = pares.reduce((acc, num)=>acc+num, 0); //acc=armazena e soma //reduce=vai tirar strings que ja foram usadas
+                document.getElementById("resultado").innerHTML= "Resultado: "+soma;
+            }
+            else{
+                document.getElementById("resultado").innerHTML= "Não há números pares"
+            }
+        }
+    </script>
+</body>
+</html>

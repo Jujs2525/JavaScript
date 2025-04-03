@@ -3,18 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Média dos Pares</title>
+    <title>Média dos Ímpares</title>
 </head>
 <body>
     <label for="numeros">Digite números separados por vírgula:</label>
     <input type="text" id="numeros">
-    <button onclick="mediaPares()">Calcular</button>
+    <button onclick="mediaImpares()">Calcular</button>
     <p id="resultado"></p>
     <script>
-        function mediaPares() {
+        function mediaImpares() {
             let lista = document.getElementById("numeros").value.split(",").map(Number);
-            let pares = lista.filter(num => num % 2 === 0);
-            let media = pares.reduce((a, b) => a + b, 0) / pares.length;
+            let impares = lista.filter(num => num % 2 === 1);
+            let media = impares.reduce((a, b) => a + b, 0) / impares.length;
             document.getElementById("resultado").textContent = "Média: " + media;
         }
     </script>

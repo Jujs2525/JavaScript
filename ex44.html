@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Média dos Pares</title>
+</head>
+<body>
+    <label for="numeros">Digite números separados por vírgula:</label>
+    <input type="text" id="numeros">
+    <button onclick="mediaPares()">Calcular</button>
+    <p id="resultado"></p>
+    <script>
+        function mediaPares() {
+            let lista = document.getElementById("numeros").value.split(",").map(Number);
+            let pares = lista.filter(num => num % 2 === 0);
+            let media = pares.reduce((a, b) => a + b, 0) / pares.length;
+            document.getElementById("resultado").textContent = "Média: " + media;
+        }
+    </script>
+</body>
+</html>

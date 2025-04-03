@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String Mais Longa</title>
+</head>
+<body>
+    <label for="palavras">Digite palavras separadas por vírgula:</label>
+    <input type="text" id="palavras">
+    <button onclick="maisLonga()">Buscar</button>
+    <p id="resultado"></p>
+    <script>
+        function maisLonga() {
+            let lista = document.getElementById("palavras").value.split(",");
+            let maior = lista.reduce((a, b) => a.length > b.length ? a : b);
+            document.getElementById("resultado").textContent = "Mais longa: " + maior;
+        }
+    </script>
+</body>
+</html>

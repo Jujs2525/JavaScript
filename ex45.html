@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maior Salário</title>
+</head>
+<body>
+    <label for="pessoas">Digite nomes e salários separados por vírgula (Ex: Ana-3000, João-4000):</label>
+    <input type="text" id="pessoas">
+    <button onclick="maiorSalario()">Buscar</button>
+    <p id="resultado"></p>
+    <script>
+        function maiorSalario() {
+            let lista = document.getElementById("pessoas").value.split(",");
+            let maior = lista.reduce((a, b) => a.split("-")[1] > b.split("-")[1] ? a : b);
+            document.getElementById("resultado").textContent = "Maior salário: " + maior.split("-")[0];
+        }
+    </script>
+</body>
+</html>

@@ -3,18 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Maior Número</title>
+    <title>Ordenar Números</title>
 </head>
 <body>
     <label for="numeros">Digite números separados por vírgula:</label>
     <input type="text" id="numeros">
-    <button onclick="encontrarMaior()">Maior</button>
+    <button onclick="ordenar()">Ordenar</button>
     <p id="resultado"></p>
     <script>
-        function encontrarMaior() {
-            let lista = document.getElementById("numeros").value.split(",");
-            let maior = Math.max(...lista);
-            document.getElementById("resultado").textContent = "Maior número: " + maior;
+        function ordenar() {
+            let lista = document.getElementById("numeros").value.split(",").map(Number);
+            lista.sort((a, b) => a - b);
+            document.getElementById("resultado").textContent = lista.join(", ");
         }
     </script>
 </body>

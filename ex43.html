@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ordenar Strings</title>
+</head>
+<body>
+    <label for="palavras">Digite palavras separadas por vírgula:</label>
+    <input type="text" id="palavras">
+    <button onclick="ordenarStrings()">Ordenar</button>
+    <p id="resultado"></p>
+    <script>
+        function ordenarStrings() {
+            let lista = document.getElementById("palavras").value.split(",");
+            lista.sort();
+            document.getElementById("resultado").textContent = lista.join(", ");
+        }
+    </script>
+</body>
+</html>
